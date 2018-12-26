@@ -1,0 +1,31 @@
+server:
+  port: 8000
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+    schema: classpath:sql/schema.sql
+    data: classpath:sql/data.sql
+  application:
+    name: microservice-user
+logging:
+  level: info
+management:
+  security:
+    enabled: false
+info:
+  app:
+    name: @project.artifactId@
+    encodig: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://192.168.211.160:8762/eureka/,http://192.168.211.160:8761/eureka/}
+#  config: classpath:log/logback.xml
