@@ -1,5 +1,5 @@
 FROM openjdk:8-jre
 VOLUME /tmp
-ADD target/microservice-gateway-zuul-0.0.1-SNAPSHOT.jar /app.jar
+ADD target/microservice-user-0.0.1-SNAPSHOT.jar /app.jar
 ADD docker/run.sh /run.sh
 ENTRYPOINT [ "/run.sh" ]
